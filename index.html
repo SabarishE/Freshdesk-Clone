@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Freshdesk Clone</title>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- title logo -->
+      <link rel="icon" href="./icons/title.jpg" type="image/icon type">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <!-- CSS -->
+      <link rel="stylesheet" href="styles.css"/>
+      <link rel="stylesheet" href="./secondDir/scss.css"/>
+   </head>
+   <body>
+      <!-- /* --------left (SIDE NAV) starts ---------- */ -->
+      <div class="left">
+         <!-- /* --------fresh desk logo starts---------- */ -->
+         <div class="clogo" ><img id="clogo" src="https://indfassetsgreen.freshdesk.com/production/a/assets/images/svg/global-flat/freshdesk-white-8deaccae56e912c1ef9bd3e416ce3968fec73b39d58581ca5e19da4922154111.svg"/></div>
+         <!-- /* --------fresh desk logo ends---------- */ -->
+         <img id ="dashboardR"class="logo2" src="./icons/speedometer.png">
+         <img id ="ticketR" class="logo2" src="./icons/ticket.png">
+         <img id ="contactR" class="logo2" src="./icons/contact-book.png">
+         <img id ="solutionR" class="logo2" src="./icons/book.png">
+         <img id ="reportR" class="logo2" src="./icons/bar-chart.png" alt="bar">
+         <img id ="settingR" class="logo2" src="./icons/setting.png">
+         <button id="menu-close"><i class="fas fa-less-than"></i></button>
+      </div>
+      <!-- /* --------left (SIDE NAV) ends ---------- */ -->
+      <!-- ------Right side starts ----- -->
+      <div id="right">
+         <!-- -------top nav starts------ -->
+         <div id="topnav">
+            <!-- topnav-left  starts -->
+            <div id="topnav-left">
+               <img id="tog" src="./icons/menu.png">
+               <span id="page" >My Dashboard</span>
+            </div>
+            <!-- topnav-left  ends -->
+            <!-- topnav-right  starts-->
+            <div id="topnav-right">
+               <button class="btn-custom">Get Started</button>
+               <select id="new-select">
+                  <option value="" disabled selected> &#8862; New</option>
+                  <option value="ticket">New ticket</option>
+                  <option value="contact">New contact</option>
+               </select>
+               <span id="bar">|</span>
+               <i class="fa fa-search" id="lens"></i>
+               <div id="search">
+                  <i class="fa fa-search" ></i>
+                  <input type="text" placeholder="Search" id="search-box">
+               </div>
+               <img class="logo1 navDisOne navDisTwo" src="./icons/bell.png">
+               <img class="logo1 navDisOne  navDisTwo" src="./icons/gift.png">
+               <img class="logo1 navDisOne  navDisTwo" src="./icons/calendar.png">
+               <img class="logo1 navDisTwo" src="./icons/user.png" >	
+            </div>
+            <!-- topnav-right  ends -->
+            <!-- ------top-nav -bottom  starts---- -->
+            <div id="topnav-bottom">
+               <select id="drop">
+                  <option value="">All groups</option>
+                  <option>Escalation</option>
+                  <option>Product Management</option>
+                  <option>QA</option>
+                  <option>Replacement</option>
+                  <option>Sales</option>
+                  <option>Shipping <br>and delivery</option>
+               </select>
+               <div id="ticket-ops" >
+                  <button id="UpdateFormBtn" class="btn-custom"><img src="https://cdn1.iconfinder.com/data/icons/material-set-5/48/464-512.png">Bulk update</button>
+                  <button id="DelBtn" class="btn-custom"><img src="https://cdn3.iconfinder.com/data/icons/mixed-ui-icons-3/110/Untitled-72-256.png">Delete</button>
+               </div>
+            </div>
+            <!-- ------top-nav -bottom  ends---- -->
+         </div>
+         <!-- -------top nav ends------ -->
+         <div id="content" style="margin-top:25px">
+            <!-- ------------DASHBOARD LAYOUT STARTS --------- -->
+            <div id="dashboardContent">
+               <div id="row1">
+                  <div class="stat"> Unresolved <br><br><span>2</span></div>
+                  <div class="stat"> Overdue <br><br><span>10</span></div>
+                  <div class="stat"> Due today <br><br><span>5</span></div>
+                  <div class="stat"> Open <br><br><span>5</span></div>
+                  <div class="stat"> On hold <br><br><span>9</span></div>
+                  <div class="stat"> Unassigned <br><br><span>5</span></div>
+               </div>
+               <div id="row2">
+                  <h4>
+                     Todays's trends 
+                  </h4>
+                  <span class="st" id="dateString"></span>
+                  <div>
+                     <canvas id="myChart"></canvas>
+                  </div>
+               </div>
+               <div id="row3">
+                  <div class="stat"> Unresolved tickets <br><span class="st">Across helpdesk</span></div>
+                  <div class="stat"> Customer satisfaction <br><span class="st">Across helpdesk this month</span></div>
+                  <div class="stat"> Forums <br><span class="st">Across helpdesk</span></div>
+               </div>
+            </div>
+            <!-- ------------DASHBOARD LAYOUT ENDS --------- -->
+            <!-- ----------CONTACTS LAYOUT STARTS --------- -->
+            <div id="contactContent" style="display:none">
+               <div id="contactFormDiv">
+               </div>
+               <div id="contactTableDiv">
+               </div>
+            </div>
+            <!-- ----------CONTACTS LAYOUT ENDS --------- -->
+            <div id="greyDiv" style="display:none">
+               <!--  ticket demo starts ---- -->
+               <div id="formDiv" style="display:none">
+                  <button id="addform-close">X</button>
+                  <h2>New Ticket</h2>
+                  <!-- ----------form starts---------- -->
+                  <form onsubmit="addForm();return false" id="add-form">
+                     <div  class="form-fields">
+                        <h6>Contact</h6>
+                        <div id="contact-input">
+                           <div>
+                              <label class="field" >Name</label><br>
+                              <input type="text" class="name"   name="name" autocomplete="off">
+                           </div>
+                           <div>
+                              <label class="field" >Email <sup> *</sup></label><br>
+                              <input type="email" class="email"   autocomplete="off" pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-fields">
+                        <label class="field" >Subject <sup> *</sup></label><br>
+                        <input type="text" class="subject"   autocomplete="off">
+                     </div>
+                     <!-- ------- DROP 1 OF 6 -------->
+                     <div class="form-fields">
+                        <label class="field" >Type</label><br>
+                        <select  class="type" >
+                           <option value="" disabled>--</option>
+                           <option value="Question">Question</option>
+                           <option value="Incident">Incident</option>
+                           <option value="Feature Requests">Feature Requests</option>
+                           <option value="Refunds and Returns">Refunds and Returns</option>
+                           <option value="Bulk order">Bulk order</option>
+                           <option value="Refund">Refund</option>
+                        </select>
+                     </div>
+                     <!-- ------- DROP 2 OF 6 -------->
+                     <div class="form-fields">
+                        <label class="field" >Source</label><br>
+                        <select  class="source">
+                           <option value="" disabled>--</option>
+                           <option value=1>Email</option>
+                           <option value=2>Portal</option>
+                           <option value=3>Phone</option>
+                           <option value=7>Chat</option>
+                        </select>
+                     </div>
+                     <!-- ------- DROP 3 OF 6 -------->
+                     <div class="form-fields">
+                        <label class="field" >Status <sup> *</sup></label><br>
+                        <select  class="status" required>
+                           <option value="" disabled>--</option>
+                           <option value=2>Open</option>
+                           <option value=3>Pending</option>
+                           <option value=4>Resolved</option>
+                           <option value=5>Closed</option>
+                           <option value="Waiting on customer" disabled>Waiting on customer</option>
+                           <option value="Waiting on third party" disabled>Waiting on third party</option>
+                        </select>
+                     </div>
+                     <!-- ------- DROP 4 OF 6 -------->
+                     <div class="form-fields">
+                        <label class="field" >Priority <sup> *</sup></label><br>
+                        <select  class="priority" required>
+                           <option value="" disabled>--</option>
+                           <option value=1>Low</option>
+                           <option value=2>Medium</option>
+                           <option value=3>High</option>
+                           <option value=4>Urgent</option>
+                        </select>
+                     </div>
+                     <!-- ------- DROP 5 OF 6 -------->
+                     <div class="form-fields">
+                        <label class="field" >Group</label><br>
+                        <select  class="group">
+                           <option value="" disabled>--</option>
+                           <option value="Account managers">Account managers</option>
+                           <option value="Billing">Billing</option>
+                           <option value="Escalations">Escalations</option>
+                           <option value="Product Management" >Product Management</option>
+                           <option value="QA">QA</option>
+                           <option value="Replacement">Replacement</option>
+                           <option	value="Sales">Sales</option>
+                           <option value="Shipping and delivery">Shipping and delivery</option>
+                        </select>
+                     </div>
+                     <!-- ------- DROP 6 OF 6 -------->
+                     <div class="form-fields">
+                        <label class="field" >Agent</label><br>
+                        <select  class="agent">
+                           <option value="" disabled>--</option>
+                           <option value="">trial one</option>
+                        </select>
+                     </div>
+                     <div class="form-fields">
+                        <label class="field" >Description <sup> *</sup></label><br>
+                        <textarea name="description" class="description"  required></textarea>
+                     </div>
+                     <div class="form-fields">
+                        <label class="field" >Tag</label><br>
+                        <input type="text" class="tag"   autocomplete="off">
+                     </div>
+                     <div  class="form-fields addFormBtn">
+                        <input type="submit" value="Create" class="submit" id="createTicket">
+                        <button id="resetBtn" class="secBtn" >Create another</button>
+                     </div>
+                  </form>
+                  <!-- -------form ends -------- -->
+               </div>
+               <!-- -------form DIV ends------- -->
+               <!--     ---------edit form div starts --------- -->
+               <div id="ticket-demo">
+               </div>
+            </div>
+            <!-- ----------grey DIV ends---------- -->
+            <div id="ticketByIdDiv">
+               <h5>Filter by ID</h5>
+               <form onsubmit="idFetch();return false" id="FilterForm"> 
+                  <label class="field" >Enter ID </label><br>
+                  <input type="number"   id="inputIDfetch"  required>
+                  <input type="submit" value="Apply">
+               </form>
+               <button id="allTickets">All Tickets</button>
+            </div>
+         </div>
+         <!-- ----------content ends -------- -->
+         <!-- ------right side ends ------- -->
+      </div>
+      <!-- f
+         <!-- -------update ticket drawer (edit-drawer) starts------- -->
+      <div id="edit-drawer" >
+         <div id="editForm-header">
+            <h3><img src="https://cdn4.iconfinder.com/data/icons/cursors-gestures/100/cursor_6-256.png">Bulk update</h3>
+            <button id="drawer-close-one">X</button>
+         </div>
+         <form onsubmit="editForm();return false" id="edit-form">
+            <div id="idDiv">ID:<input class="id" type="text" id="UpdationId" readonly></input></div>
+            <div class="form-fields">
+               <label class="field" >Subject <sup>*</sup></label><br>
+               <input type="text" class="subject"   autocomplete="off" required>
+            </div>
+            <!-- ------- DROP 1 OF 6 -------->
+            <div class="form-fields">
+               <label class="field" >Type</label><br>
+               <select  class="type" >
+                  <option value="" disabled>--</option>
+                  <option value="Question">Question</option>
+                  <option value="Incident">Incident</option>
+                  <option value="Feature Requests">Feature Requests</option>
+                  <option value="Refunds and Returns">Refunds and Returns</option>
+                  <option value="Bulk order">Bulk order</option>
+                  <option value="Refund">Refund</option>
+               </select>
+            </div>
+            <!-- ------- DROP 2 OF 6 -------->
+            <div class="form-fields">
+               <label class="field" >Source</label><br>
+               <select  class="source">
+                  <option value="" disabled>--</option>
+                  <option value=1>Email</option>
+                  <option value=2>Portal</option>
+                  <option value=3>Phone</option>
+                  <option value=7>Chat</option>
+               </select>
+            </div>
+            <!-- ------- DROP 3 OF 6 -------->
+            <div class="form-fields">
+               <label class="field" >Status<sup>*</sup></label><br>
+               <select  class="status" required>
+                  <option value="" disabled>--</option>
+                  <option value=2>Open</option>
+                  <option value=3>Pending</option>
+                  <option value=4>Resolved</option>
+                  <option value=5>Closed</option>
+                  <option value=6>Waiting on customer</option>
+                  <option value=7>Waiting on third party</option>
+               </select>
+            </div>
+            <!-- ------- DROP 4 OF 6 -------->
+            <div class="form-fields">
+               <label class="field" >Priority<sup>*</sup></label><br>
+               <select  class="priority" required>
+                  <option value="" disabled>--</option>
+                  <option value=1 >Low</option>
+                  <option value=2 >Medium</option>
+                  <option value=3 >High</option>
+                  <option value=4 >Urgent</option>
+               </select>
+            </div>
+            <!-- ------- DROP 5 OF 6 -------->
+            <div class="form-fields">
+               <label class="field" >Group</label><br>
+               <select  class="group">
+                  <option value="" disabled>--</option>
+                  <option value="Account managers">Account managers</option>
+                  <option value="Billing">Billing</option>
+                  <option value="Escalations">Escalations</option>
+                  <option value="Product Management" >Product Management</option>
+                  <option value="QA">QA</option>
+                  <option value="Replacement">Replacement</option>
+                  <option	value="Sales">Sales</option>
+                  <option value="Shipping and delivery">Shipping and delivery</option>
+               </select>
+            </div>
+            <!-- ------- DROP 6 OF 6 -------->
+            <div class="form-fields">
+               <label class="field" >Agent</label><br>
+               <select  class="agent">
+                  <option value="">--</option>
+                  <option value="">trial one</option>
+               </select>
+            </div>
+            <div class="form-fields">
+               <label class="field" >Tag</label><br>
+               <input type="text" class="tag"  autocomplete="off">
+            </div>
+            <div  id="flex-btns">
+               <input type="submit" value="UPDATE" class="pop" >
+            </div>
+         </form>
+         <button class="secBtn" id="drawer-close-two">Cancel</button>
+      </div>
+      <!-- -------update ticket drawer ends------- -->
+      <!-- -------add contact drawer starts------- -->
+      <div id="add-contact-drawer" >
+         <div id="add-contact-header">
+            <p>	<img src="https://cdn3.iconfinder.com/data/icons/material-line-thin/1024/add_friend-256.png">New Contact</p>
+            <button id="contact-drawer-close">X</button>
+         </div>
+         <form onsubmit="contactAddForm();return false" id="contact-add-form">
+            <div>
+               <label class="field" >Full name<sup>*</sup></label><br>
+               <input type="text" class="name"   name="name" autocomplete="off" placeholder="Enter the name of this person" required>
+            </div>
+            <div>
+               <label class="field" >Title</label><br>
+               <input type="text" class="title"   name="title" autocomplete="off" placeholder="Enter a title">
+            </div>
+            <div>
+               <label class="field" >Email<sup>*</sup></label><br>
+               <input type="email" class="email"   name="email" autocomplete="off" required>
+            </div>
+            <div>
+               <label class="field" >Address</label><br>
+               <textarea placeholder="Enter the address of this person"></textarea>
+            </div>
+            <div>
+               <label class="field" >About</label><br>
+               <textarea placeholder="Enter some text"></textarea>
+            </div>
+            <div  class="form-fields">
+               <input type="submit" value="Create" id="createContact">
+               <button   id="resetBtnc">Create another</button>
+            </div>
+         </form>
+      </div>
+      <!-- -------add contact drawer ends------- -->
+      <!-- ------update contact drawer starts------- -->
+      <div id="update-contact-drawer" >
+         <div id="update-contact-header">
+            <p>	<img src="https://cdn4.iconfinder.com/data/icons/single-width-stroke/24/oui-icons-50-256.png">Edit contact</p>
+            <button id="update-contact-drawer-close">X</button>
+         </div>
+         <div id="ContactIdDiv">ID:<input class="id" type="text" id="UpdationIdContact" readonly></input></div>
+         <form onsubmit="contactUpdateForm();return false" id="contact-update-form">
+            <div>
+               <label class="field" >Full name<sup>*</sup></label><br>
+               <input type="text" class="name"   autocomplete="off" placeholder="Enter the name of this person" required>
+            </div>
+            <div>
+               <label class="field" >Title</label><br>
+               <input type="text" class="job_title"   autocomplete="off" placeholder="Enter a title">
+            </div>
+            <div>
+               <label class="field" >Email<sup>*</sup></label><br>
+               <input type="email" class="email"    autocomplete="off" required>
+            </div>
+            <div>
+               <label class="field" >Address</label><br>
+               <textarea placeholder="Enter the address of this person"></textarea>
+            </div>
+            <div>
+               <label class="field" >About</label><br>
+               <textarea placeholder="Enter some text"></textarea>
+            </div>
+            <div  class="form-fields">
+               <input type="submit" value="Update" id="updateContact">
+            </div>
+         </form>
+      </div>
+      <!-- ------update contact drawer ends------- -->
+      <div id="popupDiv" >
+         <h4>Invalid ID !!!</h4>
+         enter a valid one.
+         <button id="popCloser">
+         X
+         </button>
+      </div>
+      <div id="popupDiv-2" >
+         <div>	<span id="msg"></span>
+            <button id="popCloser-2">
+            x
+            </button>
+         </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script type='text/javascript' src='config.js'></script>
+      <script src="index.js"></script>
+      <script src="./secondDir/sjs.js"></script>
+   </body>
+</html>

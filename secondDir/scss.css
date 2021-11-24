@@ -1,0 +1,214 @@
+/* --------dashboard css starts--------- */
+
+#dashboardContent {
+  background-color: rgb(232, 239, 243);
+  z-index: 0;
+  padding: 1.5rem 0;
+  color: rgb(34, 34, 75);
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+#row1 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0.5rem;
+  justify-content: space-between;
+}
+
+#row1 div {
+  border: 1px rgb(255, 253, 253) solid;
+  border-radius: 4px;
+  width: 190px;
+  height: 105px;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+  box-sizing: border-box;
+  color: #183247;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+#row1 div:hover {
+  color: #2c5cc5;
+  transition: 0.3s;
+}
+#row1 div span {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#row2 {
+  padding: 1rem;
+  height: 85vh;
+  background-color: white;
+  margin: 0 0.8rem 0.5rem 0.8rem;
+  border-radius: 5px;
+}
+
+#row2 div {
+  max-width: 75%;
+  max-height: 85%;
+  margin-top: 1rem;
+}
+
+#row3 {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#row3 div {
+  border: 1px rgb(255, 253, 253) solid;
+  border-radius: 10px;
+  width: 32%;
+  height: 308px;
+  padding: 20px 10px;
+  background-color: white;
+  font-size: 0.8rem;
+}
+
+.st {
+  font-size: 12px;
+  color: rgb(161, 163, 165);
+}
+/* --------dashboard css ends--------- */
+
+/* --------contacts page css starts------- */
+#contactContent {
+  width: 75%;
+  min-height: 100vh;
+  padding: 0.5rem;
+  background-color: rgb(218, 231, 240);
+  margin: 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 4px 2px rgb(177, 175, 175) inset;
+}
+#contact-add-form input[type="submit"],
+#edit-form input[type="submit"],
+#contact-update-form input[type="submit"],
+#updateContact {
+  width: 5rem;
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+#resetBtnc {
+  width: 10rem;
+  margin-left: 0;
+  border: 1px solid grey;
+  background-color: rgb(235, 233, 233);
+  border-radius: 4px;
+}
+#resetBtnc:hover {
+  background-color: rgb(185, 185, 185);
+}
+#contactTableDiv {
+  margin: 10px auto;
+  width: 98%;
+  min-height: 75vh;
+  background-color: white;
+  overflow-x: auto;
+  font-size: 0.8rem;
+}
+
+#contactTableDiv table {
+  width: 100%;
+}
+
+#contactTableDiv table tr {
+  height: 4rem;
+  border-bottom: 0.25px solid rgb(226, 226, 226);
+}
+#contactTableDiv table td {
+  min-width: 6rem;
+}
+
+.tableHeader {
+  color: rgb(76, 76, 114);
+  font-weight: bold;
+  background-color: rgb(241, 241, 245);
+}
+
+#contactTableDiv tr:hover {
+  background-color: rgb(239, 239, 243);
+}
+
+#contactTableDiv tr td #contactAvatar {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0.6;
+  border: none;
+  border-radius: 4px;
+}
+
+#contactTbl td {
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+#contactTbl tr {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgb(176, 202, 241);
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+/* rgb(207, 207, 207); */
+#contactTbl tr:hover {
+  background-color: rgb(239, 239, 243);
+}
+#nameHover {
+  cursor: pointer;
+}
+#nameHover:hover {
+  color: rgb(87, 87, 196);
+}
+
+.contactEditBtn {
+  border-radius: 3px;
+  background-color: rgb(112, 112, 112);
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+.contactEditBtn:hover {
+  box-shadow: 0 0 3px 1px black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 375px) {
+  #row1 div {
+    width: 90%;
+    margin: 1rem auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #row3 div {
+    width: 90%;
+    margin: 1.5rem auto;
+  }
+  #row2 {
+    width: 95%;
+    height: 45vh;
+    margin: auto;
+  }
+  #row2 div {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #row2 {
+    max-height: 55vh;
+  }
+}
+
+/* --------contacts page css starts------- */
