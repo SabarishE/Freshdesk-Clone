@@ -119,7 +119,7 @@
                   <button id="addform-close">X</button>
                   <h2>New Ticket</h2>
                   <!-- ----------form starts---------- -->
-                  <form onsubmit="addForm();return false" id="add-form">
+                  <form onsubmit="addForm();return false" id="add-form" data-netlify=true name="add_ticket">
                      <div  class="form-fields">
                         <h6>Contact</h6>
                         <div id="contact-input">
@@ -231,7 +231,7 @@
             <!-- ----------grey DIV ends---------- -->
             <div id="ticketByIdDiv">
                <h5>Filter by ID</h5>
-               <form onsubmit="idFetch();return false" id="FilterForm"> 
+               <form onsubmit="idFetch();return false" id="FilterForm" data-netlify=true name="ticket_by_id"> 
                   <label class="field" >Enter ID </label><br>
                   <input type="number"   id="inputIDfetch"  required>
                   <input type="submit" value="Apply">
@@ -249,7 +249,7 @@
             <h3><img src="https://cdn4.iconfinder.com/data/icons/cursors-gestures/100/cursor_6-256.png">Bulk update</h3>
             <button id="drawer-close-one">X</button>
          </div>
-         <form onsubmit="editForm();return false" id="edit-form">
+         <form onsubmit="editForm();return false" id="edit-form" data-netlify=true name="edit_ticket">
             <div id="idDiv">ID:<input class="id" type="text" id="UpdationId" readonly></input></div>
             <div class="form-fields">
                <label class="field" >Subject <sup>*</sup></label><br>
@@ -343,7 +343,7 @@
             <p>	<img src="https://cdn3.iconfinder.com/data/icons/material-line-thin/1024/add_friend-256.png">New Contact</p>
             <button id="contact-drawer-close">X</button>
          </div>
-         <form onsubmit="contactAddForm();return false" id="contact-add-form">
+         <form onsubmit="contactAddForm();return false" id="contact-add-form" data-netlify=true name="add_contact">
             <div>
                <label class="field" >Full name<sup>*</sup></label><br>
                <input type="text" class="name"   name="name" autocomplete="off" placeholder="Enter the name of this person" required>
@@ -378,7 +378,7 @@
             <button id="update-contact-drawer-close">X</button>
          </div>
          <div id="ContactIdDiv">ID:<input class="id" type="text" id="UpdationIdContact" readonly></input></div>
-         <form onsubmit="contactUpdateForm();return false" id="contact-update-form">
+         <form onsubmit="contactUpdateForm();return false" id="contact-update-form" data-netlify=true name="update_contact">
             <div>
                <label class="field" >Full name<sup>*</sup></label><br>
                <input type="text" class="name"   autocomplete="off" placeholder="Enter the name of this person" required>
@@ -420,7 +420,7 @@
          </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script type='text/javascript' src='config.js' type="module"></script>
+      <!-- <script type='text/javascript' src='config.js' type="module"></script> -->
       <script src="index.js" type="module"></script>
       <script src="./secondDir/sjs.js" type="module"></script>
    </body>
