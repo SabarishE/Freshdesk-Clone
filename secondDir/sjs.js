@@ -1,3 +1,5 @@
+import {API_KEY,DOMAIN} from "../config.js";
+
 // ---------chart for dashboard starts---------
 
 const labels = [
@@ -226,8 +228,8 @@ function popupCall2(msg) {
 }
 
 // ------CONTACTS DOM STARTS -----------
-var key = btoa(configvar.API_KEY);
-var domain=configvar.DOMAIN;
+var key = btoa(API_KEY);
+var domain=DOMAIN;
 
 var contactCollection = [];
 function fetchContacts() {

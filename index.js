@@ -1,6 +1,7 @@
+import {API_KEY,DOMAIN} from "./config.js"
 // API  key of Freshdesk converted from binary to ascii
-var key = btoa(configvar.API_KEY);
-var domain=configvar.DOMAIN;
+var key = btoa(API_KEY);
+var domain=DOMAIN;
 
 
 var ticketCollection = []; // >>>> overall ticket collection
