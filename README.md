@@ -7,4 +7,4 @@ CRUD operations with freshdesk API on
 2. Contacts
 
 
-# Visit the [site](https://freshdeskapiclone.netlify.app/) 🚀
+# Visit the [site](https://freshdesk-api-clone.netlify.app/) 🚀
