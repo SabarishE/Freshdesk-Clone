@@ -1,4 +1,4 @@
-# Freshdesk Clone
+# Resolver-Dot-Com
 
 ### Functionalities:
 
